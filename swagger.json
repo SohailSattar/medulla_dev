@@ -1,0 +1,189 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0.0",
+      "title": "MGTALENT APPLICATION API",
+      "description": "MGTALENT APPLICATION API",
+      "license": {
+        "name": "MIT",
+        "url": "https://opensource.org/licenses/MIT"
+      }
+    },
+    "host": "localhost:3000",
+    "basePath": "/api/v1/users",
+    "tags": [
+      {
+        "name": "Users",
+        "description": "API for users in the system"
+      }
+    ],
+    "schemes": [
+      "http"
+    ],
+    "consumes": [
+      "application/json"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "paths": {
+      "/register": {
+        "post": {
+          "tags": [
+            "Users"
+          ],
+          "description": "Create new user in system",
+          "parameters": [
+            {
+              "name": "user",
+              "in": "body",
+              "description": "User that we want to create",
+              "schema": {
+                "$ref": "#/definitions/register"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "New user is created",
+              "schema": {
+                "$ref": "#/definitions/res"
+              }
+            }
+          }
+        }
+      },
+      "/login": {
+        "post": {
+          "tags": [
+            "Users"
+          ],
+          "description": "User Login",
+          "parameters": [
+            {
+              "name": "user",
+              "in": "body",
+              "description": "user details to login",
+              "schema": {
+                "$ref": "#/definitions/login"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "Login in success",
+              "schema": {
+                "$ref": "#/definitions/res"
+              }
+            }
+          }
+        }
+      },
+      "/profile": {
+        "get": {
+          "tags": [
+            "Users"
+          ],
+          "description": "Get all users",
+          "parameters": [
+            {
+              "name": "authorization",
+              "in": "header",
+              "description": "auth token",
+              "schema": {
+                "$ref": "#/definitions/register"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "profile is created",
+              "schema": {
+                "$ref": "#/definitions/res"
+              }
+            }
+          }
+        }
+      }
+    },
+    "definitions": {
+      "register": {
+        "required": [
+          "email",
+          "password",
+          "firstName",
+          "lastName",
+          "hearAboutUs"
+        ],
+        "properties": {
+          "email": {
+            "type": "string",
+            "uniqueItems": true
+          },
+          "password": {
+            "type": "string",
+            "uniqueItems": true
+          },
+          "firstName": {
+            "type": "string"
+          },
+          "lastName": {
+            "type": "string"
+          },
+          "hearAboutUs": {
+            "type": "string"
+          },
+          "agentName": {
+            "type": "string"
+          },
+          "agentContact": {
+            "type": "string"
+          }
+        }
+      },
+      "login": {
+        "required": [
+          "email",
+          "password"
+        ],
+        "properties": {
+          "email": {
+            "type": "string",
+            "uniqueItems": true
+          },
+          "password": {
+            "type": "string",
+            "uniqueItems": true
+          }
+        }
+      },
+      "res": {
+        "properties": {
+          "data": {
+            "type": "string",
+            "uniqueItems": true
+          },
+          "status": {
+            "type": "string",
+            "uniqueItems": true
+          },
+          "statusCode": {
+            "type": "string"
+          }
+        }
+      },
+      "users": {
+        "type": "array",
+        "ref": "#/definitions/register"
+      }
+    }
+  }

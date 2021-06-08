@@ -1,0 +1,9 @@
+[{
+    "email": "admin@medulla.com",
+    "password": "admin",
+    "firstName": "admin",
+    "hearAboutUs": "admin",
+    "role": "superAdmin",
+    "active": "true",
+    "image": "/files/default_dp.jpeg"
+}]

@@ -1,0 +1,24 @@
+$PRIMARY: #8c1f3d;//#68152A;
+$PRIMARY_SHADE: #7E1B36;
+$PRIMARY_ALT: #D30840;
+
+$WHITE: #FFFFFF;
+$WHITE_DIM: #eeeaea;
+$WHITE_DIM2: #F5F5F5;
+$BLACK: #000000;
+
+$BOXSHADOWCOLOR: rgba(0, 0, 0, 0.16);
+$GRAY: #707070;
+$BORDER: #C7C7C7;
+
+$GREEN:#84b04e;
+$VIOLET: #2e2caa;
+
+$BASEFONT: 'Playfair Display';
+$SECONDARYFONT: 'Ubuntu';
+
+$TITLESIZE: 1.6em;
+
+.color-standard {
+    color: $PRIMARY;
+}

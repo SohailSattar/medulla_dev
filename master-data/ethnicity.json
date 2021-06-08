@@ -1,0 +1,349 @@
+{ "ethnic_look" : [
+        {
+            "type" : "Ethnic Look",
+            "value" : "Indian",
+            "description": "None"   
+        },
+        {
+            "type" : "Ethnic Look",
+            "value" : "Arab - GCC",
+            "description": "None"   
+        },
+        {
+            "type" : "Ethnic Look",
+            "value" : "Arab - Levant",
+            "description": "None"   
+        },
+        {
+            "type" : "Ethnic Look",
+            "value" : "Asian",
+            "description": "None"   
+        },
+        {
+            "type" : "Ethnic Look",
+            "value" : "Mediterranean",
+            "description": "None"   
+        },
+        {
+            "type" : "Ethnic Look",
+            "value" : "African",
+            "description": "None"   
+        },
+        {
+            "type" : "Ethnic Look",
+            "value" : "European",
+            "description": "None"   
+        },
+        {
+            "type" : "Ethnic Look",
+            "value" : "Latino",
+            "description": "None"   
+        },
+        {
+            "type" : "Ethnic Look",
+            "value" : "Mixed",
+            "description": "None"   
+        }
+    ],
+
+    "hair_type" : [
+        {
+            "type" : "Hair Type",
+            "value" : "Bald",
+            "description": "None"   
+        },
+        {
+            "type" : "Hair Type",
+            "value" : "Curly",
+            "description": "None"   
+        },
+        {
+            "type" : "Hair Type",
+            "value" : "Dreadlocks",
+            "description": "None"   
+        },
+        {
+            "type" : "Hair Type",
+            "value" : "Wavy",
+            "description": "None"   
+        }
+    ],
+
+    "hair_color": [
+        {
+            "type" : "Hair Color",
+            "value" : "Black",
+            "description": "None"   
+        },
+        {
+            "type" : "Hair Color",
+            "value" : "Blonde",
+            "description": "None"   
+        },
+        {
+            "type" : "Hair Color",
+            "value" : "Brown",
+            "description": "None"   
+        },
+        {
+            "type" : "Hair Color",
+            "value" : "Grey",
+            "description": "None"   
+        },
+        {
+            "type" : "Hair Color",
+            "value" : "Red",
+            "description": "None"   
+        },
+        {
+            "type" : "Hair Color",
+            "value" : "White",
+            "description": "None"   
+        }
+        
+    ],
+
+    "eye_color" : [
+        {
+            "type" : "Eye Color",
+            "value" : "Black",
+            "description": "None"   
+        },
+        {
+            "type" : "Eye Color",
+            "value" : "Blue",
+            "description": "None"   
+        },
+        {
+            "type" : "Eye Color",
+            "value" : "Brown",
+            "description": "None"   
+        },
+        {
+            "type" : "Eye Color",
+            "value" : "Green",
+            "description": "None"   
+        },
+        {
+            "type" : "Eye Color",
+            "value" : "Hazel",
+            "description": "None"   
+        }
+    ],
+
+    "height" : [
+        {
+            "type" : "Height",
+            "value" : "50-219",
+            "description": "None"   
+        }
+    ],
+
+    "shoe_size" : [
+        {
+            "type" : "Height",
+            "value" : "15-48",
+            "description": "None"   
+        }
+    ],
+
+    "shirt_size" : [
+        {
+            "type" : "Shirt Size",
+            "value" : "L",
+            "description": "None"   
+        },
+        {
+            "type" : "Shirt Size",
+            "value" : "M",
+            "description": "None"   
+        },
+        {
+            "type" : "Shirt Size",
+            "value" : "S",
+            "description": "None"   
+        },
+        {
+            "type" : "Shirt Size",
+            "value" : "XL",
+            "description": "None"   
+        },
+        {
+            "type" : "Shirt Size",
+            "value" : "XS",
+            "description": "None"   
+        },
+        {
+            "type" : "Shirt Size",
+            "value" : "XXL",
+            "description": "None"   
+        },
+        {
+            "type" : "Shirt Size",
+            "value" : "XSS",
+            "description": "None"   
+        }
+    ],
+
+    "pant_size" : [
+        {
+            "type" : "Pant Size",
+            "value" : "24-42",
+            "description": "None"   
+        }
+    ],
+
+    "jacket_size" : [
+        {
+            "type" : "Jacket Size",
+            "value" : "L",
+            "description": "None"   
+        },
+        {
+            "type" : "Jacket Size",
+            "value" : "M",
+            "description": "None"   
+        },
+        {
+            "type" : "Jacket Size",
+            "value" : "S",
+            "description": "None"   
+        },
+        {
+            "type" : "Jacket Size",
+            "value" : "XL",
+            "description": "None"   
+        },
+        {
+            "type" : "Jacket Size",
+            "value" : "XS",
+            "description": "None"   
+        },
+        {
+            "type" : "Jacket Size",
+            "value" : "XXL",
+            "description": "None"   
+        },
+        {
+            "type" : "Jacket Size",
+            "value" : "XSS",
+            "description": "None"   
+        }
+    ],
+
+    "dress_size" : [
+        {
+            "type" : "Dress Size",
+            "value" : "L",
+            "description": "None"   
+        },
+        {
+            "type" : "Dress Size",
+            "value" : "M",
+            "description": "None"   
+        },
+        {
+            "type" : "Dress Size",
+            "value" : "S",
+            "description": "None"   
+        },
+        {
+            "type" : "Dress Size",
+            "value" : "XL",
+            "description": "None"   
+        },
+        {
+            "type" : "Dress Size",
+            "value" : "XS",
+            "description": "None"   
+        },
+        {
+            "type" : "Dress Size",
+            "value" : "XXL",
+            "description": "None"   
+        },
+        {
+            "type" : "Dress Size",
+            "value" : "XSS",
+            "description": "None"   
+        }
+    ],
+
+    "chest" : [
+        {
+            "type" : "Chest",
+            "value" : "45-120",
+            "description": "None"   
+        }
+    ],
+
+    "waist" : [
+        {
+            "type" : "Waist",
+            "value" : "45-120",
+            "description": "None"   
+        }
+    ],
+
+    "hips" : [
+        {
+            "type" : "Hips",
+            "value" : "45-120",
+            "description": "None"   
+        }
+    ],
+
+    "performance" : [
+        {
+            "type" : "Performance",
+            "value" : "Acrobats",
+            "description": "None"   
+        },
+        {
+            "type" : "Performance",
+            "value" : "Body painters/artists",
+            "description": "None"   
+        },
+        {
+            "type" : "Performance",
+            "value" : "Dancers/dance groups",
+            "description": "None"   
+        },
+        {
+            "type" : "Performance",
+            "value" : "DJ",
+            "description": "None"   
+        },
+        {
+            "type" : "Performance",
+            "value" : "lllusionist",
+            "description": "None"   
+        },
+        {
+            "type" : "Performance",
+            "value" : "Kids shows",
+            "description": "None"   
+        },
+        {
+            "type" : "Performance",
+            "value" : "Musicians/bands",
+            "description": "None"   
+        }
+        ,
+        {
+            "type" : "Performance",
+            "value" : "Presenters/MC",
+            "description": "None"   
+        },
+        {
+            "type" : "Performance",
+            "value" : "Singers",
+            "description": "None"   
+        },
+        {
+            "type" : "Performance",
+            "value" : "Special shows",
+            "description": "None"   
+        }
+    ]
+}

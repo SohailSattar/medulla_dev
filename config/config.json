@@ -1,0 +1,46 @@
+{
+  "development": {
+    "username": "root",
+    "password": "medullaadmin123",
+    "database": "mgtalent",
+    "host": "127.0.0.1",
+    "baseUrl": "http://67.205.178.177:3000",
+    "defaultDp": "http://67.205.178.177:3000/files/default_dp.jpeg",
+    "dialect": "mysql",
+    "secret": "secret",
+    "portfolio": {
+      "premium": {
+        "max_images": 30,
+        "max_audios": 5,
+        "max_videos": 10
+      },
+      "nonPremium": {
+        "max_images": 5,
+        "max_audios": 5,
+        "max_videos": 2
+      }
+    }
+  },
+  "production": {
+    "username": "root",
+    "password": "medullaadmin123",
+    "database": "mgtalent",
+    "host": "127.0.0.1",
+    "baseUrl": "http://67.205.178.177:3000",
+    "defaultDp": "http://67.205.178.177:3000/files/default_dp.jpeg",
+    "dialect": "mysql",
+    "secret": "secret",
+    "portfolio": {
+      "premium": {
+        "max_images": 30,
+        "max_audios": 5,
+        "max_videos": 10
+      },
+      "nonPremium": {
+        "max_images": 5,
+        "max_audios": 1,
+        "max_videos": 2
+      }
+    }
+  }
+}

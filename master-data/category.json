@@ -1,0 +1,57 @@
+{"main_category" : [
+    {
+        "id" : 1,
+        "category" : "Production Crew",
+        "title" : "Production Crew",
+        "description": "Production Crew"   
+    },
+    {
+        "id" : 2,
+        "category" : "Post-Production",
+        "title" : "Post-Production",
+        "description": "Post-Production"    
+    },
+    {
+        "id" : 3,
+        "category" : "Sound and Music",
+        "title" : "Sound and Music",
+        "description": "Sound and Music"     
+    },
+    {
+        "id" : 4,
+        "category" : "Creative Concept",
+        "title" : "Creative Concept",
+        "description": "Creative Concept"     
+    },
+    {
+        "id" : 5,
+        "category" : "Art Department",
+        "title" : "Art Department",
+        "description": "Art Department"     
+    },
+    {
+        "id" : 6,
+        "category" : "Camera Department",
+        "title" : "Camera Department",
+        "description": "Camera Department"     
+    },
+    {
+        "id" : 7,
+        "category" : "Events Crew",
+        "title" : "Events Crew",
+        "description": "Events Crew"     
+    },
+    {
+        "id" : 8,
+        "category" : "Entertainers",
+        "title" : "Entertainers",
+        "description": "Entertainers"     
+    },
+    {
+        "id" : 9,
+        "category" : "Actors, Models and Extras",
+        "title" : "Actors, Models and Extras",
+        "description": "Actors, Models and Extras"     
+    }
+ ]
+}

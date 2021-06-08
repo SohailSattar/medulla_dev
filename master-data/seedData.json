@@ -1,0 +1,994 @@
+{
+    "appearance": {
+        "ethnicLook": [
+            "Indian",
+            "Arab - GCC",
+            "Arab - Levant",
+            "Asian",
+            "Mediterranean",
+            "African",
+            "European",
+            "Latino",
+            "Mixed"
+        ],
+        "hairType": [
+            "Bald",
+            "Curly",
+            "Dreadlocks",
+            "Wavy"
+        ],
+        "hairColor": [
+            "Black",
+            "Blonde",
+            "Brown",
+            "Grey",
+            "Red",
+            "White"
+        ],
+        "eyeColor": [
+            "Black",
+            "Blue",
+            "Brown",
+            "Green",
+            "Hazel"
+        ],
+        "height": "50-219",
+        "shoeSize": "15-48",
+        "tshirtSize": [
+            "L",
+            "M",
+            "S",
+            "XL",
+            "XS",
+            "XXL",
+            "XXS"
+        ],
+        "pantSize": "24-42",
+        "jacketSize": [
+            "L",
+            "M",
+            "S",
+            "XL",
+            "XS",
+            "XXL",
+            "XXS"
+        ],
+        "dressSize": [
+            "L",
+            "M",
+            "S",
+            "XL",
+            "XS",
+            "XXL",
+            "XXS"
+        ],
+        "chest": "45-120",
+        "waist": "45-120",
+        "hips": "45-120",
+        "performance": [
+            "Acrobats",
+            "Body painters/artists",
+            "Dancers/dance groups",
+            "DJ",
+            "lllusionist",
+            "Kids shows",
+            "Musicians/bands",
+            "Presenters/MC",
+            "Singers",
+            "Special shows"
+        ]
+    },
+    "features": {
+        "willingToTravel": [
+            "Yes",
+            "No"
+        ],
+        "tattoos": [
+            "None",
+            "Multiple",
+            "Single"
+        ],
+        "piercings": [
+            "None",
+            "Multiple",
+            "Single"
+        ],
+        "facialHair": [
+            "Beard",
+            "Clean shaven",
+            "Curtain",
+            "Goatee",
+            "Handlebar mustache",
+            "Long beard",
+            "Mustache",
+            "Soul patch",
+            "Willing to Shave"
+        ],
+        "wardrobeItems": [
+            "Bathing suit",
+            "Black cocktail dress",
+            "Black high heels",
+            "Business suit",
+            "Clown suit",
+            "Emirati national dress",
+            "Full length gown",
+            "High heels",
+            "Tux",
+            "Saudi National Dress",
+            "Indian National Dress"
+        ]
+    },
+    "sports": {
+        "waterSports": [
+            "Body Surfing",
+            "Canceing",
+            "Jet Skiing",
+            "Kaya king",
+            "Scuba diving",
+            "Snorkeling",
+            "Surfing",
+            "Water polo",
+            "Water skiing",
+            "Windsurfing"
+        ],
+        "winterSports": [
+            "Croos country Sking",
+            "Figure skating",
+            "Skiing",
+            "Snowboarding",
+            "Snowmobiling",
+            "Speed skating"
+        ],
+        "gymnastics": [
+            "Aerobics",
+            "Baton twirling",
+            "Boxing",
+            "Cheer leading",
+            "Jogging",
+            "Jampa ropa",
+            "Running",
+            "Trampoline",
+            "Weight lifting",
+            "Yoga"
+        ],
+        "teamSports": [
+            "Badminton",
+            "Baseball",
+            "Basketball",
+            "Cricket",
+            "Field hockey",
+            "Football",
+            "Handball",
+            "Hockey",
+            "Lacrosse",
+            "Racquetball"
+        ],
+        "miscSports": [
+            "Acobatics",
+            "Archey",
+            "Billiards",
+            "Bowling",
+            "Croquet",
+            "Fencing",
+            "Fishing",
+            "Fly fishing",
+            "Frisbee",
+            "Golf"
+        ],
+        "swimming": [
+            "Diving",
+            "Swimming",
+            "Synchronized"
+        ],
+        "trackAndField": [
+            "Braod jump",
+            "Track,general",
+            "Sprinter",
+            "Shot put",
+            "Relay",
+            "Pole vault",
+            "Marathon",
+            "Long jump",
+            "Long distance",
+            "Javelin"
+        ],
+        "cycling": [
+            "BMX",
+            "Cycling",
+            "Mountain Biking",
+            "Recumbent",
+            "Unicycle"
+        ]
+    },
+    "languages": [
+        {
+            "name": "Akan"
+        },
+        {
+            "name": "Albanian"
+        },
+        {
+            "name": "Amharic"
+        },
+        {
+            "name": "Arabic"
+        },
+        {
+            "name": "Armenian"
+        },
+        {
+            "name": "Assamese"
+        },
+        {
+            "name": "Awadhi"
+        },
+        {
+            "name": "Azerbaijani"
+        },
+        {
+            "name": "Balochi"
+        },
+        {
+            "name": "Belarusian"
+        },
+        {
+            "name": "Bengali"
+        },
+        {
+            "name": "Bhojpuri"
+        },
+        {
+            "name": "Bulgarian"
+        },
+        {
+            "name": "Burmese"
+        },
+        {
+            "name": "Cebuano (Visayan)"
+        },
+        {
+            "name": "Chewa"
+        },
+        {
+            "name": "Chhattisgarhi"
+        },
+        {
+            "name": "Chittagonian"
+        },
+        {
+            "name": "Czech"
+        },
+        {
+            "name": "Danish"
+        },
+        {
+            "name": "Deccan"
+        },
+        {
+            "name": "Dhundhari"
+        },
+        {
+            "name": "Dutch"
+        },
+        {
+            "name": "Eastern Min"
+        },
+        {
+            "name": "English"
+        },
+        {
+            "name": "French"
+        },
+        {
+            "name": "Fula"
+        },
+        {
+            "name": "Gan Chinese"
+        },
+        {
+            "name": "German"
+        },
+        {
+            "name": "Greek"
+        },
+        {
+            "name": "Gujarati"
+        },
+        {
+            "name": "Haitian Creole"
+        },
+        {
+            "name": "Hakka"
+        },
+        {
+            "name": "Haryanvi"
+        },
+        {
+            "name": "Hausa"
+        },
+        {
+            "name": "Hiligaynon"
+        },
+        {
+            "name": "Hindi"
+        },
+        {
+            "name": "Hmong"
+        },
+        {
+            "name": "Hungarian"
+        },
+        {
+            "name": "Igbo"
+        },
+        {
+            "name": "Ilocano"
+        },
+        {
+            "name": "Indonesian/Malay"
+        },
+        {
+            "name": "Italian"
+        },
+        {
+            "name": "Japanese"
+        },
+        {
+            "name": "Javanese"
+        },
+        {
+            "name": "Jin"
+        },
+        {
+            "name": "Kannada"
+        },
+        {
+            "name": "Kazakh"
+        },
+        {
+            "name": "Khmer"
+        },
+        {
+            "name": "Kinyarwanda"
+        },
+        {
+            "name": "Kirundi"
+        },
+        {
+            "name": "Konkani"
+        },
+        {
+            "name": "Korean"
+        },
+        {
+            "name": "Kurdish"
+        },
+        {
+            "name": "Lebanese"
+        },
+        {
+            "name": "Lithuanian"
+        },
+        {
+            "name": "Madurese"
+        },
+        {
+            "name": "Magahi"
+        },
+        {
+            "name": "Maithili"
+        },
+        {
+            "name": "Malagasy"
+        },
+        {
+            "name": "Malayalam"
+        },
+        {
+            "name": "Mandarin"
+        },
+        {
+            "name": "Marathi"
+        },
+        {
+            "name": "Marwari"
+        },
+        {
+            "name": "Mossi"
+        },
+        {
+            "name": "Nepali"
+        },
+        {
+            "name": "Northern Min"
+        },
+        {
+            "name": "Norwegian"
+        },
+        {
+            "name": "Odia (Oriya)"
+        },
+        {
+            "name": "Oromo"
+        },
+        {
+            "name": "Pashto"
+        },
+        {
+            "name": "Persian (Farsi)"
+        },
+        {
+            "name": "Polish"
+        },
+        {
+            "name": "Portuguese"
+        },
+        {
+            "name": "Punjabi"
+        },
+        {
+            "name": "Quechua"
+        },
+        {
+            "name": "Romanian"
+        },
+        {
+            "name": "Russian"
+        },
+        {
+            "name": "Saraiki"
+        },
+        {
+            "name": "Serbo-Croatian"
+        },
+        {
+            "name": "Shona"
+        },
+        {
+            "name": "Sindhi"
+        },
+        {
+            "name": "Sinhalese"
+        },
+        {
+            "name": "Slovak"
+        },
+        {
+            "name": "Slovene"
+        },
+        {
+            "name": "Somali"
+        },
+        {
+            "name": "Southern Min"
+        },
+        {
+            "name": "Spanish"
+        },
+        {
+            "name": "Sundanese"
+        },
+        {
+            "name": "Swahili"
+        },
+        {
+            "name": "Swedish"
+        },
+        {
+            "name": "Sylheti"
+        },
+        {
+            "name": "Tagalog"
+        },
+        {
+            "name": "Tamazight"
+        },
+        {
+            "name": "Tamil"
+        },
+        {
+            "name": "Telugu"
+        },
+        {
+            "name": "Thai"
+        },
+        {
+            "name": "Turkish"
+        },
+        {
+            "name": "Turkmen"
+        },
+        {
+            "name": "Ukrainian"
+        },
+        {
+            "name": "Urdu"
+        },
+        {
+            "name": "Uyghur"
+        },
+        {
+            "name": "Uzbek"
+        },
+        {
+            "name": "Vietnamese"
+        },
+        {
+            "name": "Wu (Shanghainese)"
+        },
+        {
+            "name": "Xhosa"
+        },
+        {
+            "name": "Xiang (Hunnanese)"
+        },
+        {
+            "name": "Yoruba"
+        },
+        {
+            "name": "Yue (Cantonese)"
+        },
+        {
+            "name": "Zhuang"
+        },
+        {
+            "name": "Zulu"
+        }
+    ],
+    "arts": {
+        "dance": [
+            "Ballet",
+            "Ballroom",
+            "Belly dancing",
+            "Bollywood",
+            "Break dancing",
+            "Clog",
+            "Club/freestyle",
+            "Disco",
+            "Flamenco",
+            "Hip hop",
+            "Hula",
+            "Irish dance",
+            "Jazz",
+            "Line",
+            "Modern",
+            "Polka",
+            "Pop locking",
+            "Robot",
+            "Salsa",
+            "Samba",
+            "Square",
+            "Swing",
+            "Tango",
+            "Tap",
+            "Waltz"
+        ],
+        "singing": [
+            "Country",
+            "Egyptian",
+            "Folk",
+            "Jazz",
+            "Khaliji",
+            "Lebanese",
+            "Musical theater",
+            "Opera",
+            "Pop",
+            "R&b",
+            "Rap"
+        ],
+        "vocalRange": [
+            "Alto",
+            "Baritone",
+            "bass",
+            "Mezzo-soparno"
+        ],
+        "instruments": [
+            "Accordion",
+            "Autoharp",
+            "Banjo",
+            "Bass",
+            "Bassoon",
+            "Bones",
+            "Bongos",
+            "Cello",
+            "Clarinet",
+            "Conga",
+            "Djembe",
+            "Drums",
+            "Dulcimer",
+            "Fiddle",
+            "Finger cymbals",
+            "Flute",
+            "French horn",
+            "Goblet Drum (Derbakeh)",
+            "Guitar",
+            "Harmonica",
+            "Harp",
+            "Jazz piano",
+            "Kazoo",
+            "Keyboards",
+            "Mandolin",
+            "Manjira Fluete",
+            "Maracas",
+            "Marimba",
+            "Oboe",
+            "Organ",
+            "Oud",
+            "Percussion",
+            "Piano",
+            "Piccolo",
+            "Recorder",
+            "Sax",
+            "Stand up bass",
+            "Synthesizer",
+            "Tambourine",
+            "Trombone",
+            "Trumpet",
+            "Tuba",
+            "Ukulele",
+            "Viola",
+            "Violin"
+        ]
+    },
+    "combatTraining": {
+        "stageCombatTraining": [
+            "Daggers",
+            "hand-to-hand",
+            "Repaier",
+            "Staff",
+            "Swords"
+        ],
+        "martialArts": [
+            "Aikido",
+            "Capoeira",
+            "Hapkido",
+            "Jeet kune do",
+            "Jiu-jitsu",
+            "Judo",
+            "Karate",
+            "Krav-maga",
+            "Kung fu",
+            "Tae kwon do"
+        ],
+        "martialArtsWeaponsTraining": [
+            "Bo staffs",
+            "Escrima",
+            "Kama",
+            "Nanchukas",
+            "Sai",
+            "Swords",
+            "Throwing knives",
+            "Throwing stars",
+            "Tonfa"
+        ],
+        "generalWeaponsTraining": [
+            "Cross bow",
+            "handgun",
+            "Long bow",
+            "Rifle"
+        ]
+    },
+    "otherSkills": {
+        "specialFeatures": [
+            "Dread locks",
+            "Foot model",
+            "Hand model",
+            "Piercings",
+            "Plus Size",
+            "Practicing sports",
+            "Tattoos",
+            "Twins"
+        ],
+        "drivingSkills": [
+            "Heavy Machinery",
+            "Car",
+            "Motor Bike"
+        ],
+        "improvisation": [
+            "Acting styles",
+            "Comedy",
+            "Drama",
+            "Impressionist",
+            "Improv",
+            "Mime",
+            "Stand-Up Comedy"
+        ],
+        "circusSkills": [
+            "Aerial work",
+            "Clown",
+            "Contortionist",
+            "Fire eater",
+            "Fire juggler",
+            "Hula hoop",
+            "Juggler",
+            "Mime",
+            "Stilt walker",
+            "Trapeze"
+        ],
+        "horseRidingSkills": [
+            "Bare back",
+            "Barrel",
+            "Dressage",
+            "English",
+            "Horseback riding, general",
+            "Jump",
+            "Polo",
+            "Rodeo",
+            "Rope",
+            "Side saddle",
+            "Western"
+        ],
+        "smoking": [
+            "Cigarettes",
+            "Cigars",
+            "Midwakh",
+            "Pipe"
+        ],
+        "miscellaneousSkills": [
+            "Astrologer",
+            "Bartender",
+            "Carpentry",
+            "Chef",
+            "Crochet",
+            "Disc jockey",
+            "Ear prompter",
+            "Knit",
+            "Magician",
+            "Masseuse",
+            "Pilates",
+            "Puppetry",
+            "Sign language",
+            "Stand-in experience",
+            "Teleprompter",
+            "Ventriloquist",
+            "Video games",
+            "Whistler",
+            "Yo-yo"
+        ]
+    },
+    "jobCategories": [
+        {
+            "category": "Actors",
+            "subCategories": [
+                "Feature Films",
+                "Theatre",
+                "Short Films",
+                "Musicals",
+                "Stuntmen"
+            ],
+            "mainCategoryID": 9
+        },
+        {
+            "category": "Art Directors & Prop Masters",
+            "subCategories": [
+                "Stage Design",
+                "Set Design",
+                "Set Creation",
+                "Prop creation",
+                "Prop Buying"
+            ],
+            "mainCategoryID": 5
+        },
+        {
+            "category": "CG/3D Animator",
+            "subCategories": [
+                "Traditional animation or Classical 2D animation",
+                "Digital 3D animation",
+                "Stop-motion animation",
+                "Clay animation or Claymation",
+                "Cut-out animation",
+                "Sand Animation",
+                "Typography Animation",
+                "Paint-on-glass animation"
+            ],
+            "mainCategoryID": 2
+        },
+        {
+            "category": "Copy & Script writers",
+            "subCategories": [
+                "Feature Films",
+                "Music Videos",
+                "Short Films",
+                "Theatre & Musicals",
+                "TV Commercials",
+                "Corporate Videos",
+                "Ghost writing"
+            ],
+            "mainCategoryID": 4
+        },
+        {
+            "category": "Directors",
+            "subCategories": [
+                "Feature Films",
+                "Music Videos",
+                "Short Films",
+                "Theatre & Musicals",
+                "TV Commercials",
+                "Corporate Videos",
+                "Stunt directors"
+            ],
+            "mainCategoryID": 4
+        },
+        {
+            "category": "Entertainers & Performers",
+            "subCategories": [
+                "Comedians",
+                "Contortionists",
+                "Dancers",
+                "Singers",
+                "Bands",
+                "Acrobats",
+                "Other Acts",
+                "Musicians-specify Instrument"
+            ],
+            "mainCategoryID": 3
+        },
+        {
+            "category": "Fashion & Wardrobe Stylist",
+            "subCategories": [
+                "Weddings",
+                "Competitions & Pageants",
+                "Film, TV and Commercial shoots",
+                "Private wardrobe styling"
+            ],
+            "mainCategoryID": 5
+        },
+        {
+            "category": "Emcees",
+            "subCategories": [
+                "TV Shows",
+                "Documentaries & Factual",
+                "Game Shows",
+                "Events & Exhibitions",
+                "Voice Over"
+            ],
+            "mainCategoryID": 8
+        },
+        {
+            "category": "Makeup & Hairstyling Artists",
+            "subCategories": [
+                "Weddings",
+                "Competitions & Pageants",
+                "Film, TV and Commercial shoots",
+                "Cinema make up"
+            ],
+            "mainCategoryID": 5
+        },
+        {
+            "category": "Models",
+            "subCategories": [
+                "Catwalk",
+                "Competitions & Pageants",
+                "Events & Promotions",
+                "Fit models (ecommerce)",
+                "Hair Models",
+                "Music Videos",
+                "Photo shoots",
+                "Video Shoot",
+                "Hand models",
+                "Lingerie models",
+                "Other"
+            ],
+            "mainCategoryID": 9
+        },
+        {
+            "category": "Photo Retouchers",
+            "subCategories": [],
+            "mainCategoryID": 2
+        },
+        {
+            "category": "Photographers",
+            "subCategories": [
+                "Lifestyle",
+                "Glamour & Fashion",
+                "Events",
+                "BTS",
+                "Commercials",
+                "Wildlife",
+                "Underwater",
+                "Product Photography",
+                "Sports",
+                "Aerial",
+                "Wedding",
+                "Portrait",
+                "Architectural",
+                "Stock",
+                "Food"
+            ],
+            "mainCategoryID": 6
+        },
+        {
+            "category": "Producers",
+            "subCategories": [
+                "Executive producer",
+                "Line producer",
+                "Supervising producer",
+                "Coordinating producer",
+                "Associate producer",
+                "Segment producer"
+            ],
+            "mainCategoryID": 1
+        },
+        {
+            "category": "Production Assistants & Runners",
+            "subCategories": [],
+            "mainCategoryID": 1
+        },
+        {
+            "category": "Promoters",
+            "subCategories": [
+                "Sampling",
+                "Host / Hostess",
+                "Events Indoor",
+                "Events Outdoor",
+                "Brand Ambassador"
+            ],
+            "mainCategoryID": 7
+        },
+        {
+            "category": "Sound Engineers, Foley & Location Sound",
+            "subCategories": [
+                "TV Shows",
+                "Documentaries & Factual",
+                "Feature Films",
+                "Short Films",
+                "Commercials",
+                "Events"
+            ],
+            "mainCategoryID": 3
+        },
+        {
+            "category": "Story Board Artist",
+            "subCategories": [
+                "TV Shows",
+                "Documentaries & Factual",
+                "Feature Films",
+                "Short Films",
+                "Commercials",
+                "Events"
+            ],
+            "mainCategoryID": 4
+        },
+        {
+            "category": "Video Editors",
+            "subCategories": [
+                "TV Shows",
+                "Documentaries & Factual",
+                "Feature Films",
+                "Short Films",
+                "Commercials",
+                "Events"
+            ],
+            "mainCategoryID": 2
+        },
+        {
+            "category": "Videographers",
+            "subCategories": [
+                "TV Shows",
+                "Documentaries & Factual",
+                "Feature Films",
+                "Short Films",
+                "Commercials",
+                "Events"
+            ],
+            "mainCategoryID": 6
+        },
+        {
+            "category": "DOPs",
+            "subCategories": [
+                "TV Shows",
+                "Documentaries & Factual",
+                "Feature Films",
+                "Short Films",
+                "Commercials",
+                "Events"
+            ],
+            "mainCategoryID": 6
+        },
+        {
+            "category": "Ushers & Bouncers",
+            "subCategories": [],
+            "mainCategoryID": 7
+        }
+    ]
+}

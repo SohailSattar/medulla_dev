@@ -1,0 +1,15 @@
+{
+  "LT": "HH:mm",
+  "D": "DD",
+  "M": "MM",
+  "Y": "YYYY",
+  "LTS": "HH:mm:ss",
+  "L": "DD/MM/YYYY",
+  "LL": "D MMMM YYYY",
+  "LLL": "D MMMM YYYY LT",
+  "LLLL": "dddd D MMMM YYYY LT",
+  "x": "x",
+  "YMD": "YYYY-MM-DD",
+
+  "invalidDate": "Invalid Start or End date"
+}

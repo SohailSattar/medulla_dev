@@ -1,0 +1,7 @@
+{
+    "email": "ursula.medulla@gmail.com",
+    "password": "medulla$321",
+    "sender": "Medulla Productions",
+    "host": "smtp.gmail.com",
+    "port": 25
+}

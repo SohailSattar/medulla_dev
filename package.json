@@ -1,0 +1,37 @@
+{
+  "name": "mgt",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "DBSync": "node config/DBSync.js && node seed.js",
+    "seed": "node seed.js"
+  },
+  "dependencies": {
+    "async": "^3.1.0",
+    "bluebird": "^3.5.5",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "~1.4.3",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "debug": "~2.6.9",
+    "express": "~4.16.0",
+    "express-jwt": "^5.3.1",
+    "html2canvas": "^1.0.0-rc.7",
+    "http-errors": "~1.6.2",
+    "jade": "~1.11.0",
+    "jsonwebtoken": "^8.5.1",
+    "jspdf": "^2.3.1",
+    "moment": "^2.24.0",
+    "morgan": "~1.9.0",
+    "multer": "^1.4.2",
+    "mysql2": "^1.5.3",
+    "nodemailer": "^6.3.0",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0",
+    "sequelize": "~4.37.6",
+    "swagger-ui-express": "^4.0.2",
+    "underscore": "^1.9.1"
+  }
+}
