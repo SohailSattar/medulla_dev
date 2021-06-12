@@ -63,6 +63,7 @@ exports.getFilters = function(req){
                    (eyeColor ? ` eye_color IN ${eyeColors}` : filters);
     filters = (filters.length > 0 && age) ? (filters + ` and` + age) :
                    (age ? age : filters);
+    filters+= ` and visible is true`;
     // filters = (filters.length > 0 && height.length > 0) ? (filters + ` and` + height) :
    	// 			(height.length > 0 ? height : filters);
     filters = filters.length > 0 ? ' where '+filters : '';

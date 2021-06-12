@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "medullaadmin123",
+    "password": "password",
     "database": "mgtalent",
     "host": "127.0.0.1",
     "baseUrl": "http://67.205.178.177:3000",

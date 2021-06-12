@@ -244,6 +244,11 @@ module.exports = (sequelize, DataTypes) => {
           categories: {
             type: DataTypes.JSON
           },
+          visible:{
+            type: DataTypes.BOOLEAN,
+            allowNull: false,
+            defaultValue: false,
+          },
           createdDate: {
             type: DataTypes.DATEONLY,
             field: 'created_date'

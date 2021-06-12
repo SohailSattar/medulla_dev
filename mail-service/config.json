@@ -1,7 +1,7 @@
 {
-    "email": "ursula.medulla@gmail.com",
-    "password": "medulla$321",
+    "email": "76a2a608477eb9",
+    "password": "9112673372e54a",
     "sender": "Medulla Productions",
-    "host": "smtp.gmail.com",
-    "port": 25
+    "host": "smtp.mailtrap.io",
+    "port": 2525
 }

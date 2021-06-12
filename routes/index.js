@@ -362,6 +362,7 @@ router.post('/user/register',async function(req,res,next) {
           name: user.firstName+' '+user.lastName,
           image: config.defaultDp,
           email: user.email,
+          visible: false,
           createdDate: date.currentDate,
           updatedDate: date.currentDate
         });
@@ -928,6 +929,53 @@ router.put('/user/profile',auth.required,async function(req,res) {
     var record=await db.Profile.update(body,{where: {userId: req.payload.id}});
     res.status(200).json({
       record: "profile updated successfully",
+      status: "success",
+      statusCode: 200
+    });
+  } catch(err) {
+    res.status(400).json({
+      status: 'error',
+      statusCode: 400,
+      message: err
+    });
+  }
+});
+
+
+/**
+ * To update the user profile via admin
+ */
+router.put('/user/:userId/profile',auth.required,async function(req,res) {
+  try {
+    var body = req.body;
+    var { userId } = req.params;
+
+    if( userId === null || userId === undefined ) {
+      res.status(400).json({
+        status: 'error',
+        statusCode: 400,
+        message: "UserId not found"
+      });
+    }
+
+    let profile = await db.Profile.findOne({
+      where: { userId }
+    });
+
+
+    if( userId === null || userId === undefined ) {
+      res.status(400).json({
+        status: 'error',
+        statusCode: 400,
+        message: "User not found with specific id"
+      });
+    }
+
+    profile.update(req.body);
+    profile.sav();
+    
+    res.status(200).json({
+      record: "Profile updated successfully",
       status: "success",
       statusCode: 200
     });
