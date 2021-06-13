@@ -2411,6 +2411,43 @@ router.put('/user/:userId/changepassword',auth.required,function(req,res) {
     })
 });
 
+router.put('/user/:userId/update-status',auth.required,async function(req,res,next) {
+  try {
+    var { userId } = req.params;
+
+    if( userId === null || userId === undefined ) {
+      res.status(400).json({
+        status: 'error',
+        statusCode: 400,
+        message: "UserId not found"
+      });
+    }
+     
+    let user = await db.User.findOne({where: { uuid: userId } });
+    
+    if( user === null || user === undefined ) {
+      res.status(400).json({
+        status: 'error',
+        statusCode: 400,
+        message: "User not found"
+      });
+    }
+
+    let profile = await db.Profile.findOne({ where: { userId }});
+
+    console.log(profile);
+    
+    profile.visible = !profile.visible;
+    profile.save();
+
+
+    res.status(200).send({message: 'User profile visibility updated', profile});
+  } catch(err) {
+    res.status(400).send({err: err});
+  }
+});
+
+
 router.post('/user/:userId/portfolio/delete',auth.required,async function(req,res,next) {
   const {type,filePath}=req.body;
   var { userId } = req.params;

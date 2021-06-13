@@ -4,8 +4,8 @@
     "password": "password",
     "database": "mgtalent",
     "host": "127.0.0.1",
-    "baseUrl": "http://67.205.178.177:3000",
-    "defaultDp": "http://67.205.178.177:3000/files/default_dp.jpeg",
+    "baseUrl": "http://localhost:3000",
+    "defaultDp": "http://localhost:3000/files/default_dp.jpeg",
     "dialect": "mysql",
     "secret": "secret",
     "portfolio": {
