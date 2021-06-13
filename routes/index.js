@@ -2138,9 +2138,9 @@ router.put('/user/:userId/profile',auth.required,async function(req,res) {
         message: "User not found with specific id"
       });
     }
-
+    
     profile.update(req.body);
-    profile.sav();
+    profile.save();
     
     res.status(200).json({
       record: "Profile updated successfully",
