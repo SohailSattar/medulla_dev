@@ -2523,6 +2523,95 @@ router.post('/user/:userId/portfolio/delete',auth.required,async function(req,re
 
 });
 
+router.get('/all-talents',auth.required, async function(req,res) {
+  try {
+      //search by name,gender,nationality,location and age
+    var query=`SELECT user_id as userId,name,image,about_me as aboutMe, email, phone_number as phoneNumber, professional_details as professionalDetails,
+      nationality,gender,location,ethnic_look as ethnicLook, ethnicity, hair_color as hairColor,hair_type as hairType,
+      eye_color as eyeColor,height,shoe_size as shoeSize,tshirt_size as tshirtSize,pant_size as pantSize,jacket_size as jacketSize,
+      dress_size as dressSize,chest,waist,hips,performance,languages,singing,instruments,dance,
+      vocal_range as vocalRange,water_sports as waterSports,winter_sports as winterSports,
+      gymnastics,team_sports as teamSports,misc_sports as miscSports,swimming,track_and_field as trackAndField,
+      cycling,willing_to_travel as willingToTravel,tattoos,piercings,facial_hair as facialHair,
+      wardrobe_items as wardrobeItems,stage_combat_training as stageCombatTraining,martial_arts as martialArts,
+      martial_arts_weapons_training as martialArtsWeaponsTraining,general_weapons_training as generalWeaponsTraining,
+      special_features as specialFeatures,driving_skills as drivingSkills,improvisation,circus_skills as circusSkills,
+      horseRiding_skills as horseRidingSkills,smoking ,miscellaneous_skills as miscellaneousSkills,
+      categories,DATE_OF_BIRTH as dateOfBirth, ROUND(DATEDIFF(CURDATE(),DATE_OF_BIRTH)/365) AS age FROM profile `;
+
+    let result=[];
+
+    await db.sequelize.query(query,{type: db.Sequelize.QueryTypes.SELECT}).then(function(data) {
+      if(data&&data.length) {
+        let categories=req.query.categories!='null'? req.query.categories:[];
+        let languages=req.query.languages!='null'? req.query.languages:[];
+        if(categories?.length||languages?.length) {
+          for(const detail of data) {
+            let included=false;
+            if(detail?.categories) {
+              let datacategory=JSON.parse(detail.categories);
+              for(const data2 of datacategory) {
+                if(categories.includes(data2)) {
+                  included=true;
+                  break;
+                }
+              };
+            }
+            if(categories?.length&&!included) {
+              included=false;
+            }
+            else if(included&&!languages.length) {
+              include=true;
+            }
+            else {
+              included=false;
+              if(detail?.languages) {
+                let datalanguages=JSON.parse(detail.languages);
+                for(const data2 of datalanguages) {
+                  if(languages.includes(data2)) {
+                    included=true;
+                    break;
+                  }
+                };
+              }
+            }
+            if(included) {
+              result.push(detail);
+            }
+          }
+        }
+        else {
+          result=data;
+        }
+      }
+
+      res.status(200).json({
+        status: "success",
+        statusCode: 200,
+        data: result
+      });
+    })
+    .catch(function(err) {
+      console.log(err);
+      res.status(400).json({
+        status: "error",
+        statusCode: 400,
+        message: err
+      });
+    });
+
+  } catch(e) {
+    console.log(e);
+    res.status(400).json({
+      status: "error",
+      statusCode: 400,
+      message: e
+    });
+  }
+
+
+});
+
 
 var generateJWT=function(_this) {
   var today=new Date();
