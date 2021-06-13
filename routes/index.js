@@ -942,51 +942,7 @@ router.put('/user/profile',auth.required,async function(req,res) {
 });
 
 
-/**
- * To update the user profile via admin
- */
-router.put('/user/:userId/profile',auth.required,async function(req,res) {
-  try {
-    var body = req.body;
-    var { userId } = req.params;
 
-    if( userId === null || userId === undefined ) {
-      res.status(400).json({
-        status: 'error',
-        statusCode: 400,
-        message: "UserId not found"
-      });
-    }
-
-    let profile = await db.Profile.findOne({
-      where: { userId }
-    });
-
-
-    if( userId === null || userId === undefined ) {
-      res.status(400).json({
-        status: 'error',
-        statusCode: 400,
-        message: "User not found with specific id"
-      });
-    }
-
-    profile.update(req.body);
-    profile.sav();
-    
-    res.status(200).json({
-      record: "Profile updated successfully",
-      status: "success",
-      statusCode: 200
-    });
-  } catch(err) {
-    res.status(400).json({
-      status: 'error',
-      statusCode: 400,
-      message: err
-    });
-  }
-});
 
 /**
  * Job creation
@@ -1748,7 +1704,7 @@ router.get('/talents',async function(req,res) {
   horseRiding_skills as horseRidingSkills,smoking ,miscellaneous_skills as miscellaneousSkills,
   categories,DATE_OF_BIRTH as dateOfBirth, ROUND(DATEDIFF(CURDATE(),DATE_OF_BIRTH)/365) AS age FROM profile ` +filters;
 
-
+  console.log(query);
 
   let result=[];
 
@@ -2113,6 +2069,423 @@ router.put('/works/:workid',auth.required,async function(req,res) {
     });
   }
 });
+
+/**
+ * Admin routes 👇
+ */
+
+/**
+ * To get the user profile via admin
+ */
+router.get('/user/:userId/profile',auth.required,function(req,res,next) {
+
+  var { userId } = req.params;
+
+  if( userId === null || userId === undefined ) {
+    res.status(400).json({
+      status: 'error',
+      statusCode: 400,
+      message: "UserId not found"
+    });
+  }
+
+  db.Profile.find({
+    where: { userId }
+  })
+  .then(function(user) {
+
+    res.status(200).send({
+      status: "success",
+      statusCode: 200,
+      data: user,
+    });
+  })
+  .catch(function(err) {
+    console.log(err);
+    res.status(400).json({
+      status: 'error',
+      statusCode: 400,
+      message: err
+    });
+  });
+});
+
+/**
+ * To update the user profile via admin
+ */
+router.put('/user/:userId/profile',auth.required,async function(req,res) {
+  try {
+    var body = req.body;
+    var { userId } = req.params;
+
+    if( userId === null || userId === undefined ) {
+      res.status(400).json({
+        status: 'error',
+        statusCode: 400,
+        message: "UserId not found"
+      });
+    }
+
+    let profile = await db.Profile.findOne({
+      where: { userId }
+    });
+
+
+    if( userId === null || userId === undefined ) {
+      res.status(400).json({
+        status: 'error',
+        statusCode: 400,
+        message: "User not found with specific id"
+      });
+    }
+
+    profile.update(req.body);
+    profile.sav();
+    
+    res.status(200).json({
+      record: "Profile updated successfully",
+      status: "success",
+      statusCode: 200
+    });
+  } catch(err) {
+    res.status(400).json({
+      status: 'error',
+      statusCode: 400,
+      message: err
+    });
+  }
+});
+
+router.post('/user/:userId/image',auth.required,imageFile,async function(req,res) {
+  try {
+    var { userId } = req.params;
+
+    if( userId === null || userId === undefined ) {
+      res.status(400).json({
+        status: 'error',
+        statusCode: 400,
+        message: "UserId not found"
+      });
+    }
+
+    let filePath=config.baseUrl+'/files'+req.file.path.split('files')[1];
+    var record=await db.User.update({image: filePath,updatedDate: date.currentDate},{where: { uuid }});
+    var profileImage=await db.Profile.update({image: filePath,updatedDate: date.currentDate},{where: { userId }});
+    res.status(200).json({
+      message: "imgae uploaded",
+      status: "success",
+      filePath: filePath,
+      statusCode: 200
+    });
+  } catch(err) {
+    res.status(400).json({
+      status: 'error',
+      statusCode: 400,
+      message: err
+    });
+  }
+});
+
+router.post('/user/:userId/portfolio',auth.required,portfolio,async function(req,res,next) {
+
+  var { userId } = req.params;
+
+  if( userId === null || userId === undefined ) {
+    res.status(400).json({
+      status: 'error',
+      statusCode: 400,
+      message: "UserId not found"
+    });
+  }
+
+  let image=req.files.image? req.files.image:null;
+  let video=req.files.video? req.files.video:null;
+  let audio=req.files.audio? req.files.audio:null;
+  let images=[],videos=[],audios=[];
+  let body={};
+  try {
+    let user=await db.portfolio.findOne({where: { userId }});
+    if(image) {
+      images=image.map(obj => {
+        obj.path=config.baseUrl+'/files'+obj.path.split('files')[1].replace(/\\/g,"/");
+        return obj.path;
+      });
+      if(user&&user.images) {
+        if(user.images) {
+          getUserImage=JSON.parse(user.images);
+          if(getUserImage.length) {
+            await getUserImage.forEach(function(value) {
+              images=_.uniq(images.concat(value));
+            });
+            body.images=images
+          }
+          else {
+            body.images=images;
+          }
+
+        } else {
+          body.images=images;
+        }
+
+      } else {
+        body.images=images;
+      }
+      if(body.images.length>10) return res.status(400).send({message: "exceeded maximum range",limit: 10,previous: user.images.length,current: images.length});
+    }
+    if(video) {
+      videos=video.map(obj => {
+        obj.path=config.baseUrl+'/files'+obj.path.split('files')[1].replace(/\\/g,"/");
+        return obj.path;
+      });
+      if(user&&user.videos) {
+        if(user.videos) {
+          data=[{
+            'files': videos,
+            'description': req.body.description? req.body.description:''
+          }]
+          videos=data;
+          getUserImage=JSON.parse(user.videos);
+          if(getUserImage.length) {
+            await getUserImage.forEach(function(value) {
+              videos=_.uniq(videos.concat(value));
+            });
+            body.videos=videos;
+          }
+          else {
+            body.videos=videos;
+          }
+
+        } else {
+          data=[{
+            'files': videos,
+            'description': req.body.description? req.body.description:''
+          }]
+          body.videos=data;
+        }
+      } else {
+        data=[{
+          'files': videos,
+          'description': req.body.description? req.body.description:''
+        }]
+        body.videos=data;
+      }
+      if(body.videos>10) return res.status(400).send({message: "exceeded maximum range",limit: 10,previous: user.videos.length,current: videos.length});
+    }
+    if(audio) {
+      audios=audio.map(obj => {
+        obj.path=config.baseUrl+'/files'+obj.path.split('files')[1];
+        return obj.path;
+      });
+      if(user&&user.audios) {
+        if(user.audios) {
+          data=[{
+            'files': audios,
+            'description': req.body.description? req.body.description:''
+          }]
+          audios=data;
+          getUserImage=JSON.parse(user.audios);
+          if(getUserImage.length) {
+            await getUserImage.forEach(function(value) {
+              audios=_.uniq(audios.concat(value));
+            });
+            body.audios=audios;
+          }
+          else {
+            body.audios=audios;
+          }
+
+        } else {
+          data=[{
+            'files': audios,
+            'description': req.body.description? req.body.description:''
+          }]
+          body.audios=data;
+        }
+      } else {
+        data=[{
+          'files': audios,
+          'description': req.body.description? req.body.description:''
+        }]
+        body.audios=data;
+      }
+      if(body.audios>10) return res.status(400).send({message: "exceeded maximum range",limit: 10,previous: user.audios.length,current: audios.length});
+    }
+    if(user) {
+      let update=await db.portfolio.update(body,{where: {userId: req.payload.id}});
+    } else {
+      body.userId=req.payload.id;
+      let create=await db.portfolio.create(body);
+    }
+    res.status(200).send({images: images,videos: videos,audios: audios});
+  } catch(err) {
+    console.log(err);
+    res.status(400).send({err: err});
+  }
+})
+
+router.get('/portfolio/:userId/counts',auth.required,async function(req,res,next) {
+  try {
+    let data={
+      images: 0,
+      videos: 0,
+      audios: 0
+    };
+    var { userId } = req.params;
+
+    if( userId === null || userId === undefined ) {
+      res.status(400).json({
+        status: 'error',
+        statusCode: 400,
+        message: "UserId not found"
+      });
+    }
+     
+    let user=await db.User.findOne({where: {uuid: userId},attributes: ['premium']});
+    let portfolioRec=await db.portfolio.findOne({where: {userId: userId},attributes: ['images','videos','audios']});
+
+    if(portfolioRec) {
+      let {images,videos,audios}=portfolioRec;
+      data.images=(JSON.parse(images)||[]).length;
+      data.audios=(JSON.parse(audios)||[]).length;
+      data.videos=(JSON.parse(videos)||[]).length;
+    }
+    data.premium=user.premium;
+    const {portfolio: {premium,nonPremium}}=config;
+    data=data.premium? {...data,...premium}:{...data,...nonPremium};
+
+    res.status(200).send({user: data,message: 'success'});
+  } catch(err) {
+    res.status(400).send({err: err});
+  }
+});
+
+router.put('/user/:userId/changepassword',auth.required,function(req,res) {
+  var { userId } = req.params;
+
+  if( userId === null || userId === undefined ) {
+    res.status(400).json({
+      status: 'error',
+      statusCode: 400,
+      message: "UserId not found"
+    });
+  }
+
+  db.User.findOne({
+    where: {
+      uuid : userId
+    }
+  })
+    .then(function(user) {
+      if(user) {
+        var hash=crypto.encrypt(req.body.oldPassword,user.salt);
+        if(hash==user.hash) {
+          //update record
+          user.hash=crypto.encrypt(req.body.newPassword,user.salt);
+          user.save();
+          res.status(200).json({
+            status: "success",
+            statusCode: 200,
+            message: "Password updated Successfully"
+          });
+        } else {
+          res.status(400).json({
+            status: "error",
+            statusCode: 400,
+            message: "Your old password is incorrect"
+          });
+        }
+
+      } else {
+        res.status(400).json({
+          status: "error",
+          statusCode: 400,
+          message: "Unable to update password"
+        });
+      }
+    }).catch(err => {
+      res.status(400).json({
+        status: 'error',
+        statusCode: 400,
+        message: err
+      });
+    })
+});
+
+router.post('/user/:userId/portfolio/delete',auth.required,async function(req,res,next) {
+  const {type,filePath}=req.body;
+  var { userId } = req.params;
+
+  if( userId === null || userId === undefined ) {
+    res.status(400).json({
+      status: 'error',
+      statusCode: 400,
+      message: "UserId not found"
+    });
+  }
+  
+  let filePathFinal=filePath;
+  let user=await db.portfolio.findOne({where: { userId }});
+  // user = (user && user.dataValues) ? user.dataValues : null;
+  if(user) {
+    files=JSON.parse(user[type])
+
+    if(type=='videos') {
+      videoData=[];
+      if(files.length>0) {
+        datafiles=[];
+        await files.forEach(file => {
+          if(file.files!=filePath) {
+            videoData.push(file);
+          }
+          datafiles=datafiles.concat(file.files);
+        });
+        files=datafiles;
+      }
+    }
+
+    if(type=='audios') {
+      filePathFinal=filePath[0];
+      audioData=[];
+      if(files.length>0) {
+        datafiles=[];
+        await files.forEach(file => {
+          if(file.files!=filePathFinal) {
+            audioData.push(file);
+          }
+          datafiles=datafiles.concat(file.files);
+        });
+        files=datafiles;
+      }
+    }
+
+    let index=(files.length)? files.indexOf(filePathFinal):-1;
+    if(index==-1) {
+      return res.status(400).send({err: 'Invalid userid or filepath'});
+    }
+    const deleteRec=files.splice(index,1);
+    delete files[JSON.stringify(deleteRec)];
+    if(type=='images') {
+      let update=await db.portfolio.update({images: files},{where: { userId }});
+    }
+    if(type=='videos') {
+      let update=await db.portfolio.update({videos: videoData},{where: { userId }});
+    }
+    if(type=='audios') {
+      let update=await db.portfolio.update({audios: audioData},{where: { userId }});
+    }
+    filetoDelete=JSON.stringify(deleteRec);
+    fileData=filetoDelete.split("files");
+    finalFile="./files"+fileData[1].replace('"]','');
+    await fs.unlinkSync(finalFile);
+
+    res.status(200).send({status: 'success',message: 'file removed'});
+  }
+  else {
+    return res.status(400).send({err: 'Something went wrong'});
+  }
+
+});
+
 
 var generateJWT=function(_this) {
   var today=new Date();
