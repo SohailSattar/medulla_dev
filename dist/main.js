@@ -2508,7 +2508,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 // const baseUrl = "http://localhost:3000/";
-var baseUrl = "http://67.205.178.177/";
+var baseUrl = "http://3.108.112.111/";
 var HttpService = /** @class */ (function () {
     function HttpService(http, authService) {
         this.http = http;
