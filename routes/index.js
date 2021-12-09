@@ -2545,10 +2545,10 @@ router.get('/all-talents',auth.required, async function(req,res) {
       if(data&&data.length) {
         let categories=req.query.categories!='null'? req.query.categories:[];
         let languages=req.query.languages!='null'? req.query.languages:[];
-        if(categories?.length||languages?.length) {
+        if(categories.length||languages.length) {
           for(const detail of data) {
             let included=false;
-            if(detail?.categories) {
+            if(detail.categories) {
               let datacategory=JSON.parse(detail.categories);
               for(const data2 of datacategory) {
                 if(categories.includes(data2)) {
@@ -2557,7 +2557,7 @@ router.get('/all-talents',auth.required, async function(req,res) {
                 }
               };
             }
-            if(categories?.length&&!included) {
+            if(categories.length&&!included) {
               included=false;
             }
             else if(included&&!languages.length) {
@@ -2565,7 +2565,7 @@ router.get('/all-talents',auth.required, async function(req,res) {
             }
             else {
               included=false;
-              if(detail?.languages) {
+              if(detail.languages) {
                 let datalanguages=JSON.parse(detail.languages);
                 for(const data2 of datalanguages) {
                   if(languages.includes(data2)) {
